@@ -10,7 +10,7 @@ def buscar_pais():
     buscar_nombre: str=str(input("ingrese nombre del pais (completo/parcial) "))
     console.clear()
     if not buscar_nombre: # Si el usuario no ingresa nada
-        console.print(":warning: [bold red]¡ERROR![/bold red] Debe ingresar al menos un nombre o parte de él.")
+        console.print(":warning: [bold red]¡ERROR![/bold red]:warning: Debe ingresar al menos un nombre o parte de él.")
     try:
         with open("data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = csv.DictReader(archivo)
