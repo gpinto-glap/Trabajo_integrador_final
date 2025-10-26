@@ -8,7 +8,7 @@ from rich.box import HEAVY# type: ignore
 def buscar_pais():
     console= Console()
     buscar_nombre: str=str(input("ingrese nombre del pais (completo/parcial) "))
-    console.clear()
+    
     if not buscar_nombre: # Si el usuario no ingresa nada
         console.print(":warning: [bold red]¡ERROR![/bold red]:warning: Debe ingresar al menos un nombre o parte de él.")
     try:
@@ -51,4 +51,4 @@ def buscar_pais():
     else:
         # Mensaje de no encontrado usando console.print y estilos
         console.print(f"No se encontró el país '[bold magenta]{buscar_nombre}[/bold magenta]'", style="bold on red")
-    
+    input("\nPresiona [Enter] para continuar...")
