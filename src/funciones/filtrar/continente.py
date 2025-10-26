@@ -22,11 +22,13 @@ def buscar_continente():
         return
     
     if not resultados:
+        console.clear()
         console.print(f"[bold red]No se encontraron países[/bold red] en el continente '[cyan]{continente_busqueda.capitalize()}[/cyan]'", style="white")
+        input("\nPresiona [Enter] para continuar...")
         return
 
     
-    items_por_pagina = 15 #Paginación
+    items_por_pagina = 10 #Paginación
     total_paginas = (len(resultados) + items_por_pagina - 1) // items_por_pagina
 
     for num_pagina in range(total_paginas):
