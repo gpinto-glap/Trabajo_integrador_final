@@ -52,31 +52,3 @@ def buscar_pais():
         # Mensaje de no encontrado usando console.print y estilos
         console.print(f"No se encontró el país '[bold magenta]{buscar_nombre}[/bold magenta]'", style="bold on red")
     
-    """# Abrimos el CSV
-    with open("data/paises.csv", "r", encoding="utf-8") as archivo:
-        lector = csv.DictReader(archivo)  # convierte cada fila en un diccionario
-## acá usar el try excep
-        #buscamos coincidencia completa
-        for fila in lector:
-            if fila['nombre'].lower() == buscar_nombre.lower():  
-                # Si coincide, imprimimos todos los datos
-                console.print(f"[bold red]Nombre:[/bold red] [green]{fila['nombre']}[/green]")
-                console.print(f"[bold blue]Población:[/bold blue] [yellow]{fila['poblacion']}[/yellow]")
-                console. print(f"[bold blue]Superficie:[/bold blue] [yellow]{fila['superficie']}[/yellow]")
-                console.print(f"[bold blue]Continente:[/bold blue] [yellow] {fila['continente']}[/yellow]")
-                return  
-            #buscamos coincidencia parcial (primeras 3 letras)
-            elif fila['nombre'][:3].lower() == buscar_nombre[:3].lower(): 
-                # Si coincide, imprimimos todos los datos
-                console.print(f"[bold red]Nombre:[/bold red] [green]{fila['nombre']}[/green]")
-                console.print(f"[bold blue]Población:[/bold blue] [yellow]{fila['poblacion']}[/yellow]")
-                console. print(f"[bold blue]Superficie:[/bold blue] [yellow]{fila['superficie']}[/yellow]")
-                console.print(f"[bold blue]Continente:[/bold blue] [yellow] {fila['continente']}[/yellow]")
-                return
-
-        
-        console.print(f"[bold red]No se encontró el país '{buscar_nombre}'[/bold red]")
-
-
-## Sugerencia:
-"""
