@@ -30,7 +30,7 @@ def buscar_poblacion():
             resultados = [fila for fila in lector if int(fila.get('poblacion', 0)) > numero]
             titulo_tabla = f"Países con Población > [cyan]{numero:,}[/cyan]"
         except ValueError:
-            console.print("[bold red]¡ERROR![/bold red] Debes ingresar un número válido.")
+            console.print("[bold red]¡ERROR![/bold red] [yellow]Debes ingresar un número válido.[/yellow]")
             return
         
         
@@ -40,7 +40,7 @@ def buscar_poblacion():
             resultados = [fila for fila in lector if int(fila.get('poblacion', 0)) < numero]
             titulo_tabla = f"Países con Población < [cyan]{numero:,}[/cyan]"
         except ValueError:
-            console.print("[bold red]¡ERROR![/bold red] Debes ingresar un número válido.")
+            console.print("[bold red]¡ERROR![/bold red] [yellow]Debes ingresar un número válido.[/yellow]")
             return
         
 
@@ -51,7 +51,7 @@ def buscar_poblacion():
             resultados = [fila for fila in lector if min_num <= int(fila.get('poblacion', 0)) <= max_num]
             titulo_tabla = f"Países con Población entre [cyan]{min_num:,}[/cyan] y [cyan]{max_num:,}[/cyan]"
         except ValueError:
-            console.print("[bold red]¡ERROR![/bold red] Debes ingresar números válidos.")
+            console.print("[bold red]¡ERROR![/bold red] [yellow]Debes ingresar números válidos.[/yellow]")
             return
        
     else:
@@ -59,7 +59,7 @@ def buscar_poblacion():
         return
 # Paginación
     if not resultados:
-        print("\n[bold yellow]No se encontraron países[/bold yellow] que cumplan la condición.")
+        console.print("\n[bold yellow]No se encontraron países que cumplan la condición.[/bold yellow]")
         return
 
     ITEMS_POR_PAGINA = 15
