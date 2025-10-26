@@ -37,10 +37,11 @@ def main():
         elif opcion == "4":
             menu_estadisticas()
         elif opcion == "5":
-            print("adios:)")
+            console.print("[bold blue ]Gracias por usar nuestra aplicación:)[/bold blue]")
             bandera = False
         else:
-            print("opcion invalida")
+            console.print("[yellow]:warning-text:[/yellow] [bold red] OPCION INVALIDA [/bold red] [yellow]:warning-text:[/yellow]")
+            console.print ("[yellow] Intente de nuevo[/yellow]" )
 
 if __name__ == "__main__":
     # Llamada a la función principal
