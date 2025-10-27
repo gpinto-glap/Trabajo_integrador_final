@@ -11,7 +11,7 @@ def buscar_continente():
     continente_busqueda = input("Ingresá el continente: ").strip().lower()
   
     try:   # 2. Lectura y Filtrado del CSV
-        with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
+        with open("data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = csv.DictReader(archivo)
             resultados = [
                 fila for fila in lector

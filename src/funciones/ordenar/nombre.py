@@ -10,7 +10,7 @@ def ordenar_nombre():
     console.clear()
     
     try:# Abrimos el CSV y leemos todas las filas
-        with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
+        with open("data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = list(csv.DictReader(archivo))
     except FileNotFoundError:
         console.print("[bold red]Error:[/bold red] No se encontró el archivo 'data/paises.csv'. Asegúrate de haberlo creado con la función 'get_paises()'.")

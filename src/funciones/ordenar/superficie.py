@@ -1,8 +1,8 @@
 import csv
 
-def ordenar_superficie():
+def ordenar_superficie(): #FALTA TRY EXCEPT
     # Abrimos el CSV y leemos todas las filas
-    with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
+    with open("data/paises.csv", "r", encoding="utf-8") as archivo:
         lector = list(csv.DictReader(archivo))
 
     # Preguntamos al usuario cómo quiere ordenar

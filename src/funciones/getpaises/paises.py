@@ -21,6 +21,6 @@ def get_paises():
     except requests.exceptions.RequestException as error:
         print("Error", error)  
 
-    with open("Trabajo_integrador_final-main/data/paises.csv", "w", encoding="utf-8")as archivo:
+    with open("data/paises.csv", "w", encoding="utf-8")as archivo:
         archivo.writelines(csv)
         

@@ -12,7 +12,7 @@ def buscar_pais():
     if not buscar_nombre: # Si el usuario no ingresa nada
         console.print(":warning: [bold red]¡ERROR![/bold red]:warning: Debe ingresar al menos un nombre o parte de él.")
     try:
-        with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
+        with open("data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = csv.DictReader(archivo)
             datos_paises = list(lector) # Carga todo el CSV en una lista
     except FileNotFoundError:
