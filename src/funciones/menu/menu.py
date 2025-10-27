@@ -92,12 +92,14 @@ def menu_ordenar():
             input("Presiona [Enter] para continuar...")
 
 from funciones.estadisticas.menor_mayor import estadisticas_poblacion
+from funciones.estadisticas.promedio_poblacion import promedio_poblacion
+from funciones.estadisticas.promedio_superficie import promedio_superficie
 
 
 def menu_estadisticas():
     bandera = True
     while bandera == True:
-        console.clear()
+        #console.clear()
         menu_text = Text()
         
         # Título del menú
@@ -121,10 +123,10 @@ def menu_estadisticas():
             estadisticas_poblacion()
         elif opcion == "2":
             console.clear()
-            pass
+            promedio_poblacion()
         elif opcion == "3":
             console.clear()
-            pass
+            promedio_superficie()
         elif opcion == "4":
             console.clear()
             pass

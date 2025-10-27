@@ -8,7 +8,7 @@ def buscar_poblacion():
     console=Console()
     # Abrimos el CSV
     try:
-        with open("data/paises.csv", "r", encoding="utf-8") as archivo:
+        with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
             # Guardamos todas las filas en una lista para poder filtrarlas y paginarlas
             lector = list(csv.DictReader(archivo)) 
     except FileNotFoundError:

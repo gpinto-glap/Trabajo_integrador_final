@@ -14,12 +14,13 @@ from rich.text import Text
 console = Console()
 
 
+
 def main(): 
 #docker run -it --rm -v ${PWD}:/app app:0.1
     bandera = True
     while bandera == True:
         console.clear()
-       
+        get_paises()
         menu_text = Text() # 2. Definición del texto del menú con Emojis y Colores
         
         # Título del menú en color y negrita

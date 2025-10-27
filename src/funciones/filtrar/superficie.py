@@ -8,7 +8,7 @@ console=Console()
 def buscar_superficie():
     console.clear()
     try:
-        with open("data/paises.csv", "r", encoding="utf-8") as archivo:
+        with open("Trabajo_integrador_final-main/data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = list(csv.DictReader(archivo)) 
     except FileNotFoundError:
         console.print("[bold red]Error:[/bold red] No se encontró 'data/paises.csv'.")
