@@ -94,6 +94,7 @@ def menu_ordenar():
 from funciones.estadisticas.menor_mayor import estadisticas_poblacion
 from funciones.estadisticas.promedio_poblacion import promedio_poblacion
 from funciones.estadisticas.promedio_superficie import promedio_superficie
+from funciones.estadisticas.paises_continente import paises_por_continente
 
 
 def menu_estadisticas():
@@ -129,7 +130,7 @@ def menu_estadisticas():
             promedio_superficie()
         elif opcion == "4":
             console.clear()
-            pass
+            paises_por_continente()
         elif opcion == "5":
             console.clear()
             console.print("[bold blue ]Volviendo al menú principal...[/bold blue]")
