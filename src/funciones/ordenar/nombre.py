@@ -13,16 +13,16 @@ def ordenar_nombre():
         with open("data/paises.csv", "r", encoding="utf-8") as archivo:
             lector = list(csv.DictReader(archivo))
     except FileNotFoundError:
-        console.print("[bold red]Error:[/bold red] No se encontró el archivo 'data/paises.csv'. Asegúrate de haberlo creado con la función 'get_paises()'.")
+        console.print("[bold red]ERROR:[/bold red] No se encontró el archivo 'data/paises.csv' ")
         return
     except Exception as e:
-        console.print(f"[bold red]Error al leer el archivo:[/bold red] {e}")
+        console.print(f"[bold red]ERROR al leer el archivo:[/bold red] {e}")
         return
 
     # Preguntamos al usuario cómo quiere ordenar
     console.print("\n[bold cyan]Opciones de orden por nombre:[/bold cyan]")
-    console.print("1 - De la A a la Z (ascendente)")# agregar las flechas arriba y abajo
-    console.print("2 - De la Z a la A (descendente)")
+    console.print("1 - De la [blue]A[/blue] a la [blue]Z[/blue] (ascendente)")# agregar las flechas arriba y abajo
+    console.print("2 - De la [orange]Z[/orange] a la [orange]A[/orange] (descendente)")
     opcion = input("Elegí una opción (1/2): ").strip()
 
     ordenado = []
