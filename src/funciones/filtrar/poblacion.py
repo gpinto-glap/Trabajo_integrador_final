@@ -55,7 +55,8 @@ def buscar_poblacion():
             return
        
     else:
-        console.print("[yellow]Opción inválida[/yellow]")
+        console.print("[yellow]Opción inválida[/yellow]", end="")
+        input(" presiona ENTER para continuar ")
         return
 # Paginación
     if not resultados:

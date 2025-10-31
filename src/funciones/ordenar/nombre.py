@@ -33,9 +33,9 @@ def ordenar_nombre():
         ordenado = sorted(lector, key=lambda fila: fila['nombre'], reverse=True)
         titulo_orden = "Z a A"
     else:
-        # Si la opción es inválida, limpiamos y mostramos el error
-        console.clear()
+        # Si la opción es inválida mostramos el error
         console.print("[bold yellow]Opción inválida[/bold yellow]")
+        input("presiona ENTER para continuar ")
         return
 #paginación
     paises_por_pagina = 10  # Número de filas por página

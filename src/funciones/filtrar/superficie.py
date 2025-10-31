@@ -96,7 +96,7 @@ def buscar_superficie():
                 Text(superficie, style="cyan"),
                 Text(continente, style="green"),
             )
-            console.print(tabla)
+        console.print(tabla)
 
         # Lógica de Paginación (Avanzar con ENTER)
         if total_paginas <= 1:
