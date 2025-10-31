@@ -74,4 +74,5 @@ Resultados:
 👥 Integrantes
 
 DUCI MAXIMO
+
 PINTO GUILLERMO
