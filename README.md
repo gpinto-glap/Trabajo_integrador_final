@@ -62,7 +62,7 @@ docker run -it --rm -v ${PWD}:/app nombre_imagen
 Ejemplo de búsqueda:
 
 🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menú anterior
-# Entrada: "guay"
+# Entrada: "new"
 
 Resultados:
 
