@@ -62,8 +62,9 @@ docker run -it --rm -v ${PWD}:/app nombre_imagen
 Ejemplo de búsqueda:
 
 🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menú anterior
-# Entrada: "new"
 IMPORTANTE: Las entradas deben ser en ingles
+# Entrada: "new"
+
 Resultados:
 
 <img width="514" height="202" alt="image" src="https://github.com/user-attachments/assets/d887a047-932e-4a73-bdc0-064ac0e34475" />
