@@ -51,7 +51,7 @@ def buscar_superficie():
             return
             
     except ValueError:
-        console.print(":warning:[bold red]Error:[/bold red] :warning Debes ingresar un número válido.")
+        console.print(":warning:[bold red] Error:[/bold red] :warning: Debes ingresar un número válido.")
         input("Presiona [Enter] para continuar...")
         return
 
