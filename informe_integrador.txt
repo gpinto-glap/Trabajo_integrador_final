@@ -1,0 +1,118 @@
+Trabajo Integrador Final Programación 1
+Informe del Trabajo Integrador Final: Sistema de Gestión de Países
+Alumnos: DUCI, Máximo; PINTO, Guillermo
+
+*** 1. 🌍 INTRODUCCIÓN AL PROYECTO ***
+
+Este trabajo integrador final consiste en el desarrollo de una aplicación en Python que permite gestionar información sobre países del mundo.
+El objetivo principal fue crear un programa que descargue información real de una fuente de datos externa (una API pública), la almacene de forma estructurada y ofrezca al usuario herramientas para consultarla, filtrarla, ordenarla y analizarla de manera interactiva.
+El proyecto está diseñado pensando en la claridad, la modularidad y la facilidad de uso. Se utilizó Python como lenguaje principal porque es ideal para principiantes y potente para trabajar con datos. Además, se incluyó el uso de Docker para que cualquier persona pueda ejecutar el programa sin preocuparse por instalar Python o las librerías necesarias.
+
+*** 2. 💡 CONTEXTO Y MOTIVACIÓN ***
+
+Los programadores suelen trabajar con datos que provienen de **APIs** (interfaces de programación de aplicaciones). Una API es como una "puerta" que permite a un programa pedir información a otro sistema a través de internet.
+En este proyecto, se utilizó la API pública **REST Countries**, que ofrece información actualizada sobre todos los países del mundo: nombre, capital, población, área, moneda, idiomas, región, etc..
+El programa no descarga los datos cada vez que se ejecuta. En cambio, los descarga una sola vez, los guarda en un archivo **CSV** (un tipo de archivo que se puede abrir con Excel) y luego trabaja con ese archivo. Esto es mucho más rápido y evita depender de la conexión a internet después de la primera ejecución.
+
+*** 3. 🏗️ ESTRUCTURA GENERAL DEL PROYECTO ***
+
+El proyecto está organizado en carpetas y archivos de forma clara y lógica.
+
+**Árbol de directorios completo:**
+Trabajo_integrador_final/
+├── data/
+│   └── paises.csv       ← Archivo con los datos de los países (se genera automáticamente)
+├── src/
+│   ├── funciones/       ← Carpeta con todos los módulos de funcionalidades
+│   │   ├── buscar.py    ← Búsqueda de un país por nombre
+│   │   ├── filtrar.py   ← Filtros por región y población
+│   │   ├── ordenar.py   ← Ordenar por población o área
+│   │   ├── estadisticas.py ← Cálculo de estadísticas
+│   │   ├── menu.py      ← Menú principal del programa
+│   │   └── getpaises.py ← Descarga datos de la API y crea el CSV
+│   ├── main.py          ← Archivo principal que ejecuta todo
+├── Dockerfile           ← Para ejecutar el programa en un contenedor
+├── README.md            ← Instrucciones del proyecto
+└── requirements.txt     ← Librerías necesarias
+
+* **data/:** Carpeta donde se guarda el archivo `paises.csv`.
+* **src/:** Carpeta principal del código fuente ("source").
+* **src/funciones/:** Contiene archivos pequeños con funcionalidades específicas (**modularidad**).
+* **getpaises.py:** Encargado de hablar con la API, descargar los datos y guardarlos en el CSV.
+* **main.py:** Es el "cerebro" del programa. Controla el flujo de ejecución.
+* **Dockerfile:** Archivo de configuración para empaquetar el proyecto en un **contenedor Docker**.
+* **README.md:** Archivo de texto que explica cómo instalar y usar el proyecto.
+* **requirements.txt:** Lista las librerías externas que necesita el programa (`rich` y `requests`).
+
+*** 4. 🛠️ DEPENDENCIAS DEL PROYECTO ***
+
+El programa usa dos librerías externas de Python:
+1.  **requests:** Se usa para hacer peticiones HTTP (hablar con sitios web desde código).
+2.  **Rich:** Se utiliza para crear **texto enriquecido y de formato atractivo** en la consola (color, estilo, tablas).
+Estas librerías se instalan con el comando: `pip install -r requirements.txt`.
+
+*** 5. 🔁 FLUJO DE EJECUCIÓN DEL PROGRAMA ***
+
+El programa sigue un flujo predecible:
+1.  Se ejecuta **main.py**.
+2.  Verifica la existencia de **data/paises.csv**. Si no existe, ejecuta `getpaises.py`.
+3.  Se muestra el **menú principal**.
+4.  El usuario elige una opción.
+5.  Se llama a una función específica de la carpeta `funciones/`.
+6.  Se vuelve al menú hasta que el usuario elija "Salir".
+
+*** 6. 🧠 EXPLICACIÓN DETALLADA DE CADA MÓDULO ***
+
+**6.1 getpaises.py - Descarga de Datos desde la API**
+* **Función:** `obtener_paises()`.
+* **Proceso:** Conexión a la API, extracción de datos (nombre, capital, población, área, etc.), y guardado en `data/paises.csv`.
+* **Importancia:** Incluye **manejo de errores** (`try` y `except`) y se ejecuta solo una vez para evitar dependencia constante de internet.
+
+**6.2 main.py - El Archivo Principal**
+* Actúa como el "director", coordinando el flujo.
+* **Funciones clave:** Carga el CSV en una variable **df** (DataFrame) y controla el bucle del menú.
+
+**6.3 menu.py - La Interfaz con el Usuario**
+* **Función:** `mostrar_menu()`.
+* **Tarea:** Imprimir opciones y solicitar la entrada del usuario. Está separado para mantener el código limpio.
+
+**6.4 buscar.py - Búsqueda de un País**
+* **Funcionalidad:** Búsqueda completa o parcial por nombre.
+* **Lógica:** Usa `.lower()` para búsqueda **insensible a mayúsculas/minúsculas**. Prioriza coincidencia exacta y permite parciales si el texto tiene 3 o más caracteres. Los resultados usan la librería **Rich**.
+
+**6.5 filtrar.py - Filtros Avanzados**
+* **Funcionalidad General:** Filtra países por continente y por rango de población (mínima y máxima).
+* **Paginación:** Implementa un sistema para dividir los resultados en **páginas de 10 elementos**.
+
+**6.6 ordenar.py - Ordenamiento de Datos**
+* **Funcionalidad General:** Ordena por **población** o **área** (ascendente/descendente).
+* **Conceptos:** Utiliza la función integrada `sorted()` de Python combinada con una función **lambda** como clave de ordenamiento.
+
+**6.7 estadisticas.py - Análisis de Datos**
+* **Funcionalidad:** Calcula el **promedio**, la **mediana**, el **mínimo** y **máximo** de población y área, y la cantidad de países por región.
+* **Conceptos:** Usa validaciones para prevenir errores y una estructura `if/else` para reportar estadísticas globales o filtradas.
+
+*** 7. 🚀 USO CON DOCKER ***
+
+Docker permite ejecutar el programa **sin instalar nada** (Python o librerías).
+* **Pasos:**
+    1.  `docker build -t pais-app .` (Construir la imagen).
+    2.  `docker run -it pais-app` (Ejecutar el contenedor).
+
+*** 8. ✅ BUENAS PRÁCTICAS APLICADAS ***
+
+* **Modularidad:** Cada funcionalidad en un archivo separado.
+* **Nombres claros:** `buscar_pais`, `filtrar_por_region`, etc.
+* **Manejo de errores:** `try/except` en entradas y conexiones.
+* **Separación de datos y código:** CSV en `data/`, código en `src/`.
+* **Documentación:** `README` claro.
+
+*** 9. 🏆 CONCLUSIÓN ***
+
+Este proyecto es un ejemplo de aplicación completa en Python que incluye conceptos 
+fundamentales como **APIs**, **Modularidad**, **Manejo de Archivos**, 
+**Contenerización con Docker** y **Manejo de Errores**. 
+Es una base ideal para que cualquier estudiante pueda aprender a programar con datos reales.
+
+
+

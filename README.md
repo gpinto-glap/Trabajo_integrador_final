@@ -61,14 +61,14 @@ docker run -it --rm -v ${PWD}:/app nombre_imagen
 
 Ejemplo de búsqueda:
 
-🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menú anterior.
+🔍 Ingrese el nombre del país:
 
 IMPORTANTE: Las entradas deben ser en ingles. Por ejemplo
 
 # nombre de país: Turkey
 # nombre de continente: South America
 
-
+SE ENTREGA UN INFORME DEL PROGRAMA EN FORMATO PDF Y EN FORMATO TXT
 
 👥 Integrantes
 
