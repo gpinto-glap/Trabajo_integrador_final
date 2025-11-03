@@ -63,12 +63,11 @@ Ejemplo de búsqueda:
 
 🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menú anterior.
 
-IMPORTANTE: Las entradas deben ser en ingles
-# Entrada: "new"
+IMPORTANTE: Las entradas deben ser en ingles. Por ejemplo
 
-Resultados:
+# nombre de país: Turkey
+# nombre de continente: South America
 
-<img width="514" height="202" alt="image" src="https://github.com/user-attachments/assets/d887a047-932e-4a73-bdc0-064ac0e34475" />
 
 
 👥 Integrantes
