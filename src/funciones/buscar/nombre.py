@@ -70,3 +70,5 @@ def buscar_pais():
         # Mensaje de no encontrado usando console.print y estilos
         console.print(f"No se encontró el país '[bold magenta]{buscar_nombre}[/bold magenta]'", style="bold on red")
     input("\nPresiona [Enter] para continuar...")
+#llamada a la funcion para probar
+#buscar_pais()
