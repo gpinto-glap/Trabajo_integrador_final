@@ -69,9 +69,9 @@ IMPORTANTE: Las entradas deben ser en ingles. Por ejemplo
 # nombre de continente: South America
 
 SE ENTREGA UN INFORME DEL PROGRAMA EN FORMATO PDF Y EN FORMATO TXT
+Link de video explicativo del proyecto: https://youtu.be/fXDdqZVfKGs
 
 👥 Integrantes
 
 DUCI MAXIMO
-
 PINTO GUILLERMO
