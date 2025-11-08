@@ -100,7 +100,7 @@ from funciones.estadisticas.paises_continente import paises_por_continente
 def menu_estadisticas():
     bandera = True
     while bandera == True:
-        #console.clear()
+        console.clear()
         menu_text = Text()
         
         # Título del menú
